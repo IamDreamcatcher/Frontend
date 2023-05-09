@@ -25,7 +25,7 @@ export default {
     }
 }
 
-function playGame(i){
+async function playGame(i){
     let questions = playQuestions;
     
     if (i == questions.length){
@@ -34,14 +34,9 @@ function playGame(i){
             record = result;
             setGameRecord(game_id, result);
         }
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                console.log(user.uid, game_id, result);
-                addPlayedGame(user.uid, game_id, result);
-            } else {
-                console.log('User is not logged in');
-            }
-        });
+        let current_user =  await getUserData();
+        console.log(current_user.uid, game_id, result);
+        await addPlayedGame(current_user.uid, game_id, result);
         resultsNode.innerHTML = resultTemplate(result, record);
     }
     else{
@@ -61,6 +56,18 @@ function playGame(i){
             playGame(i + 1);
         });
     }
+}
+async function getUserData() {
+    return new Promise((resolve, reject) => {
+        const auth = getAuth();
+        onAuthStateChanged(auth, user => {
+            if (user) {
+                resolve(user);
+            } else {
+                reject(new Error('User is not authenticated'));
+            }
+        });
+    });
 }
 
 function getResults(){

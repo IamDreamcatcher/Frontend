@@ -18,7 +18,7 @@ export default {
     init(){
         addEventListener('hashchange', hadleHash);
         if(!location.hash){
-            window.location.href +=  '/#start';
+            window.location.href =  '/#start';
         }
         hadleHash();
     }
