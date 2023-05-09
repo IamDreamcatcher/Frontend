@@ -1,6 +1,6 @@
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-import firebaseConfig from '../api/firebase-config.js';
+import firebaseConfig from './api/firebase-config.js';
 import Router from "./Router.js";
 
 const app = initializeApp(firebaseConfig);
