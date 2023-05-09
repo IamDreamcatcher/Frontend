@@ -29,10 +29,10 @@ const auth = getAuth(app);
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        const signInButton = document.querySelector('.authorization__link-block[href="/#signin"]');
-        const registerButton = document.querySelector('.authorization__link-block[href="/#register"]');
-        const signOutButton = document.querySelector('.authorization__link-block[href="/#start"]');
-        const profileButton = document.querySelector('.authorization__link-block[href="/#profile"]');
+        const signInButton = document.getElementById('sign_in_bnt');
+        const registerButton = document.getElementById('register_bnt');
+        const signOutButton = document.getElementById('sign_out_bnt');
+        const profileButton = document.getElementById('profile_bnt');
         signInButton.style.display = 'none';
         registerButton.style.display = 'none';
         signOutButton.style.display = 'block';
@@ -49,10 +49,10 @@ onAuthStateChanged(auth, (user) => {
         });
 
     } else {
-        const signInButton = document.querySelector('.authorization__link-block[href="/#signin"]');
-        const registerButton = document.querySelector('.authorization__link-block[href="/#register"]');
-        const signOutButton = document.querySelector('.authorization__link-block[href="/#start"]');
-        const profileButton = document.querySelector('.authorization__link-block[href="/#profile"]');
+        const signInButton = document.getElementById('sign_in_bnt');
+        const registerButton = document.getElementById('register_bnt');
+        const signOutButton = document.getElementById('sign_out_bnt');
+        const profileButton = document.getElementById('profile_bnt');
         signInButton.style.display = 'block';
         registerButton.style.display = 'block';
         signOutButton.style.display = 'none';

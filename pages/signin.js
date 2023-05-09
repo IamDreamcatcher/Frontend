@@ -22,7 +22,7 @@ export default {
             signInWithEmailAndPassword(auth, email, password)
                 .then(() => {
                     console.log('User is logged in');
-                    window.location.href = "/#start";
+                    window.location.href = window.location.href = window.location.href.split('/').slice(0, -1).join('/') + "/#start";
                 })
                 .catch((error) => {
                     const errorCode = error.code;
