@@ -106,6 +106,5 @@ async function publishGame(){
     localStorage.removeItem("currentQuestion");
     localStorage.removeItem("currentQuestions");
     await putQuestions(game_id, currentQuestions);
-    window.location.href = window.location.href.split('/').slice(0, -1).join('/')
-        + '/#menu';
+    window.location.href = '/#menu';
 }

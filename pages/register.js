@@ -30,7 +30,7 @@ export default {
             try {
                 const userCredential = await createUserWithEmailAndPassword(auth, email, password);
                 console.log('User registered:', userCredential.user);
-                window.location.href = window.location.href.split('/').slice(0, -1).join('/') + "#signin";
+                window.location.href = "/#signin";
             } catch (error) {
                 console.error(error);
             }
